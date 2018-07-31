@@ -3,6 +3,7 @@ package br.com.globalcode.command;
 import javax.swing.JTextArea;
 
 import br.com.globalcode.ConfigManager;
+import br.com.globalcode.visitor.Visitor;
 
 public class ExcluirPedido implements BaseCommand {
 
@@ -14,5 +15,8 @@ public class ExcluirPedido implements BaseCommand {
         //Código de exclusão de pedido
         taMensagens.append("Excluindo pedido do sistema...");
 	}
-
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
 }

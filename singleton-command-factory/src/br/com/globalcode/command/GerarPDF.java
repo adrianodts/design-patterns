@@ -3,6 +3,7 @@ package br.com.globalcode.command;
 import javax.swing.JTextArea;
 
 import br.com.globalcode.ConfigManager;
+import br.com.globalcode.visitor.Visitor;
 
 public class GerarPDF implements BaseCommand {
 
@@ -14,5 +15,8 @@ public class GerarPDF implements BaseCommand {
         //Código de geração do arquivo PDF
         taMensagens.append("Gerando PDF do pedido...");
 	}
-
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
 }

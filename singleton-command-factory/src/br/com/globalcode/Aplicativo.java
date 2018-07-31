@@ -19,7 +19,7 @@ public class Aplicativo extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private CommandFactory commandFactory = new CommandFactory2();
+	private CommandFactory commandFactory = new CommandFactory1();
 	JTextArea taMensagens = new JTextArea();
     
     public static void main(String[] args) {
