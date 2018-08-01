@@ -36,7 +36,7 @@ public class Aplicativo extends JFrame {
             Class<?> classeFactoryCommandFactory = Class.forName(nome);
             commandFactory = (CommandFactory) classeFactoryCommandFactory.newInstance();
         } catch (Exception e) {
-            System.out.println("Não foi possivel inicializar a CommandFactory " + e.getMessage());
+            System.out.println("NÃ£o foi possivel inicializar a CommandFactory " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -58,23 +58,33 @@ public class Aplicativo extends JFrame {
         JButton btGerarPDF = new JButton("Gerar PDF");
         JButton btNovoPedido = new JButton("Novo Pedido");
         JButton btExcluirPedido = new JButton("Excluir Pedido");
+        JButton btAcionarContabil = new JButton("Acionar Sistema Contabil");
         
         panel.add(btExcluirPedido);
         panel.add(btNovoPedido);
         panel.add(btGerarPDF);
         panel.add(btEnviarPedido);
+        panel.add(btAcionarContabil);
         
         btExcluirPedido.setActionCommand("ExcluirPedido");
         btGerarPDF.setActionCommand("GerarPDF");
         btEnviarPedido.setActionCommand("EnviarPorEmail");
         btNovoPedido.setActionCommand("NovoPedido");
+        btAcionarContabil.setActionCommand("SistemaContabil");
         
         ActionListener listener = new BotaoHandler();
         btEnviarPedido.addActionListener(listener);
         btGerarPDF.addActionListener(listener);
         btNovoPedido.addActionListener(listener);
         btExcluirPedido.addActionListener(listener);
-        		
+        btAcionarContabil.addActionListener(listener);
+        
+//        btAcionarContabil.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent evt) {
+//                buttonIntegrarContabil_clicked();
+//            }
+//        });
+        
 //        btEnviarPedido.addActionListener(new ActionListener() {
 //            public void actionPerformed(ActionEvent event) {
 //                buttonEnviar_clicked();
@@ -107,6 +117,11 @@ public class Aplicativo extends JFrame {
             command.execute(taMensagens);
         }
     }
+   
+//    public void buttonIntegrarContabil_clicked() {
+//        AcionarSistemaContabil comando = new AcionarSistemaContabil();
+//        comando.executarOperacaoContabil();
+//    }
     
 //    private void buttonEnviar_clicked() {
 //        CommandFactory commandFactory = new CommandFactory1();

@@ -1,5 +1,6 @@
 package br.com.globalcode.visitor;
 
+import br.com.globalcode.adapter.AcionarSistemaContabilAdapter;
 import br.com.globalcode.command.EnviarPorEmail;
 import br.com.globalcode.command.ExcluirPedido;
 import br.com.globalcode.command.GerarPDF;
@@ -26,5 +27,9 @@ public class LogVisitor implements Visitor {
 	public void visit(NovoPedido command) {
 		System.out.println("Gerando novo pedido...");
 	}
-
+	
+	@Override
+	public void visit(AcionarSistemaContabilAdapter command) {
+		System.out.println("Acionando sistema Contabil...");
+	}
 }

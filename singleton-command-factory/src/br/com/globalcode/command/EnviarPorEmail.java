@@ -11,8 +11,8 @@ public class EnviarPorEmail implements BaseCommand {
 	public void execute(JTextArea taMensagens) {
 		ConfigManager config = ConfigManager.getInstance();
         String server = config.getServerName();
-        taMensagens.setText("Conex„o com servidor " + server +"\n");
-        //CÛdigo de envio do pedido por email
+        taMensagens.setText("Conex√£oo com servidor " + server +"\n");
+        //C√≥digo de envio do pedido por email
         
         taMensagens.append("Enviando Pedido por Email...");
 	}
